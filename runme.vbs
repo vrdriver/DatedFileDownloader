@@ -5,12 +5,18 @@
 ' This so that you can download files with the data format of YYYYMMDD from a specific starting date.
 ' This is a vbs script, designed to be run with wscript in Windows.
 '
+' Instructions:
+' 
 ' Download curl from here for windows: https://curl.haxx.se/windows/
 ' Get the binary version and the dependancies
 '
 ' Copy the contents of the /bin folder from both zip files to the root path of this script.
 '
+' Congifure the settings below.
 '
+' Run the file runme.vbs
+'
+' Execute process.bat
 '
 '
 '
@@ -21,22 +27,25 @@
 ' curl  -o "files\DOG20200815.mp3" -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:79.0) Gecko/20100101 Firefox/79.0" -H "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8" -H "Accept-Language: en-US,en;q=0.5" --compressed -H "Connection: keep-alive" -H "Upgrade-Insecure-Requests: 1" -H "Pragma: no-cache" -H "Cache-Control: no-cache" "https://s1.amazonaws.com/somethingtest/CAT/DOG20200815.mp3"
 '
 '
+'
 ' Configuration
 
 
-strStartPath = 		               "C:\temp\script\"
+
+strStartPath = 		            "C:\temp\script\"
 strStartDrive = 		           "C:"	
 
-StartDate = "20200815"
-FinishDate = GetToday() ' "20200815"
+StartDate = "20200810"
+FinishDate = GetToday() ' "20200816"
 
-cURL_SaveLocation = "files\DOG" ' make sure there is a path called 'files'. DOG is the prefix of the dated file.
+cURL_SaveLocation = "files\DOG_" ' make sure there is a path called 'files'. DOG is the prefix of the dated file.
 ' Path to harvest the files from.
-URL = "https://s1.amazonaws.com/somethingtest/CAT/DOG"
+URL = "https://s1.amazonaws.com/somethingtest/CAT/DOG_"
+
+' In this example, the filename will be called "https://s1.amazonaws.com/somethingtest/CAT/DOG_20200810.mp3"
 
 ' The end of the file name'
-APPEND_URL = ".mp3"
- 
+APPEND_URL = ".mp3" 
 
 ' These are curl settings that will probably be need to let the server think it's got
 ' a normal web browser downloading files from it, rather than a script.
@@ -51,8 +60,6 @@ cURL_Options = cURL_Options & " -H " & chr(34) & "Connection: keep-alive" & chr(
 cURL_Options = cURL_Options & " -H " & chr(34) & "Upgrade-Insecure-Requests: 1" & chr(34) 
 cURL_Options = cURL_Options & " -H " & chr(34) & "Pragma: no-cache" & chr(34) 
 cURL_Options = cURL_Options & " -H " & chr(34) & "Cache-Control: no-cache" & chr(34)
-
-
 
 ' NOTHING ELSE TO CONFIGURE
 
