@@ -1,7 +1,8 @@
 ' Stephen Monro 20200817
+' https://github.com/vrdriver/DatedFileDownloader
 '
 ' Project: DatedFile Downloader
-'
+' 
 ' This so that you can download files with the data format of YYYYMMDD from a specific starting date.
 ' This is a vbs script, designed to be run with wscript in Windows.
 '
