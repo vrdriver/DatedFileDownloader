@@ -9,7 +9,7 @@
 ' Instructions:
 ' 
 ' Download curl from here for windows: https://curl.haxx.se/windows/
-' Get the binary version and the dependancies
+' Get the binary version and the dependencies
 '
 ' Copy the contents of the /bin folder from both zip files to the root path of this script.
 '
