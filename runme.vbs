@@ -36,7 +36,7 @@
 strStartPath = 		               "C:\temp\script\"
 strStartDrive = 		           "C:"	
 
-StartDate = "20200810"
+StartDate = "20200810" ' Or you can have it empty and the program will ask you every time it runs with a popup box
 FinishDate = GetToday() ' "20200816" or leave it as GetToday() for 'now'.
 
 cURL_SaveLocation = "files\DOG_" ' make sure there is a path called 'files'. DOG is the prefix of the dated file.
