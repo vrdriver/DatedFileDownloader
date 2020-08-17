@@ -24,19 +24,19 @@
 '
 ' cURL_Command + locationsave + GENERATED_DATE + APPEND_URL + options + URL + GENERATED_DATE + APPEND_URL
 '
-' curl  -o "files\DOG20200815.mp3" -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:79.0) Gecko/20100101 Firefox/79.0" -H "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8" -H "Accept-Language: en-US,en;q=0.5" --compressed -H "Connection: keep-alive" -H "Upgrade-Insecure-Requests: 1" -H "Pragma: no-cache" -H "Cache-Control: no-cache" "https://s1.amazonaws.com/somethingtest/CAT/DOG20200815.mp3"
+' curl  -o "files\DOG_20200815.mp3" -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:79.0) Gecko/20100101 Firefox/79.0" -H "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8" -H "Accept-Language: en-US,en;q=0.5" --compressed -H "Connection: keep-alive" -H "Upgrade-Insecure-Requests: 1" -H "Pragma: no-cache" -H "Cache-Control: no-cache" "https://s1.amazonaws.com/somethingtest/CAT/DOG_20200815.mp3"
 '
 '
-'
+
+
 ' Configuration
 
 
-
-strStartPath = 		            "C:\temp\script\"
+strStartPath = 		               "C:\temp\script\"
 strStartDrive = 		           "C:"	
 
 StartDate = "20200810"
-FinishDate = GetToday() ' "20200816"
+FinishDate = GetToday() ' "20200816" or leave it as GetToday() for 'now'.
 
 cURL_SaveLocation = "files\DOG_" ' make sure there is a path called 'files'. DOG is the prefix of the dated file.
 ' Path to harvest the files from.
@@ -84,19 +84,15 @@ Do
     aStrDate = addaday(aStrDate)
 Loop Until aStrDate = FinishDate
 
-' Execute the batch file and start the downloads 
-    
+' Execute the batch file and start the downloads     
 objBatFile.WriteLine "@echo Finished..."
 objBatFile.WriteLine "pause"
-
-
-
 objBatFile.Close	
 Set WshShell = WScript.CreateObject("WScript.Shell")
+
+' Uncomment this next line to have the script run automatically.
 'intReturn = WshShell.Run(strStartPath & "\process.bat", 4, TRUE)
  
-
-
  ' **** functions 
 
   Function GetToday()
