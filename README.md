@@ -15,7 +15,7 @@ Basically, if you have a thousand files like this:
 20200805.mp3
 ```
 
-It uses Windows VBScrip, so wscript or cscript should work fine.
+It uses Windows VBScript, so wscript or cscript should work fine.
  
 This so that you can download files with the data format of YYYYMMDD from a specific starting date.
 
